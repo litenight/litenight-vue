@@ -1,9 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-   <head>
-   </head>
-   <body>
-       <h1>LiteNight</ht>
-       <p>The lightweight agile project management tool</p>
-   </body>
+    <head>
+       <title>Litenight</title>
+       <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0"/>
+    </head>
+    <body>
+        <div class="ui sidebar inverted vertical menu">
+            <a class="item">1</a>
+            <a class="item">2</a>
+            <a class="item">3</a>
+        </div>
+
+        <div class="pusher">
+            <div id="app">
+                <div class="ui menu">
+                    <a href="#" class="item" v-on:click.stop="toggleSidebar"><i class="bars icon"></i></a>
+                    <a href="#" class="header item">
+                        <img src="./assets/images/logo-nav.png" />
+                        LiteNight
+                    </a>
+                    <a href="#" class="active item">Projects</a>
+
+
+                    <div class="right menu">
+                        <div class="borderless item">
+                            <div class="ui icon input">
+                                <input placeholder="Search..." type="text">
+                                <i class="search link icon"></i>
+                            </div>
+                        </div>
+
+                        <div class="ui simple dropdown item">
+                            <i class="user icon"></i> Account <i class="dropdown icon"></i>
+                            <div class="menu">
+                                <a class="item" href="#">Profile</a>
+                                <a class="item" href="#">Settings</a>
+                                <div class="divider"></div>
+                                <a class="item" href="#" v-on:click="logout()">Logout</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui main">
+                    <h1>Litenight</h1>
+
+                    <router-link to="/public">Public</router-link>
+                    <router-link to="/private">Private</router-link>
+
+                    <router-view></router-view>
+               </div>
+           </div>
+       </div>
+
+       <script src="dist/main.js"></script>
+    </body>
 </html>
